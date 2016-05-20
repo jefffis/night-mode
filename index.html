@@ -5,14 +5,79 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Add night-mode to your website.</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				box-sizing: border-box;
+			}
+			html {
+				font: normal 100%/1.5 sans-serif;
+			}
+			body {
+				max-width: 600px;
+				margin: 2rem auto;
+				padding: 0 1.25rem;
+			}
+			h1, h2 {
+				margin-bottom: 1rem;
+				font-weight: 600;
+				line-height: 1.25;
+			}
+			h2 {
+				margin-top: 2rem;
+				font-weight: 400;
+			}
+			p {
+				margin-bottom: 1rem;
+				color: #666;
+			}
+			#night-mode-toggle {
+				position: fixed;
+				bottom: 1.25rem;
+				right: 1.25rem;
+				outline: none;
+				background: #ddd;
+				padding-left: .75rem;
+				border-radius: 3px;
+				box-shadow: 0 0 0 1px #ccc inset;
+				cursor: pointer;
+				font-family: inherit;
+				font-size: 1rem;
+			}
+			#night-mode-toggle:active {
+				opacity: .5;
+			}
+			#night-mode-toggle:after {
+				display: inline-block;
+				background: #efefef;
+				margin-left: .5rem;
+				padding: .5rem .75rem;
+				border-radius: 0 3px 3px 0;
+				box-shadow: 0 0 0 1px #ccc inset; 
+			}
+			.off:after {
+				content: "Off";
+			}
+			.on:after {
+				content: "On";
+			}
+		</style>
 	</head>
 	<body>
 
 		<h1>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus placeat quis accusantium explicabo ipsa, exercitationem cupiditate ab sapiente provident fuga. Non voluptatum corrupti ex similique! Consectetur nesciunt quas, reprehenderit repudiandae.
+			Lorem ipsum dolor sit amet.
 		</h1>
 		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptate quis nostrum incidunt placeat aspernatur iure voluptatem ratione debitis quas, quod molestiae illum tenetur, perferendis porro maiores facilis aut. Iste?
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="###">Ab voluptate quis</a> nostrum incidunt placeat aspernatur iure voluptatem ratione debitis quas, quod molestiae illum tenetur, perferendis porro maiores facilis aut. Iste?
+		</p>
+		<h2>
+			Lorem ipsum dolor sit amet.
+		</h2>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptate quis nostrum incidunt placeat aspernatur iure voluptatem ratione debitis quas, quod molestiae illum tenetur, perferendis porro maiores facilis aut. Iste? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptate quis nostrum incidunt placeat aspernatur iure voluptatem ratione debitis quas, quod molestiae illum tenetur, perferendis porro maiores facilis aut. Iste? Lorem ipsum dolor sit amet.
 		</p>
 
 		<script src="js/night-mode.js"></script>

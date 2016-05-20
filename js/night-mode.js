@@ -6,8 +6,10 @@ var date = new Date(),
     nightModeStyle = document.createElement('style'),
     head = document.getElementsByTagName('head')[0];
 
-    nightModeButton.innerHTML = 'Night Mode Off';
+// if ( currentHour > 20 ) {
+    nightModeButton.innerHTML = 'Night Mode';
     nightModeButton.setAttribute('id', 'night-mode-toggle');
+    nightModeButton.setAttribute('class', 'off');
     nightModeButton.setAttribute('onclick', 'toggleNightMode()');
     nightModeEl.setAttribute('id', 'night-mode-overlay');
 
@@ -16,9 +18,6 @@ var date = new Date(),
     head.appendChild(nightModeStyle);
 
     body.appendChild(nightModeButton);
-
-// if ( currentHour > 20 ) {
-
 // }
 
 function toggleNightMode() {
@@ -27,10 +26,10 @@ function toggleNightMode() {
 
     if (nightModeOn) {
         nightMode.parentNode.removeChild(nightMode);
-        nightModeButton.innerHTML = 'Night Mode Off';
+        nightModeButton.classList = 'off';
     } else {
         body.appendChild(nightModeEl);
-        nightModeButton.innerHTML = 'Night Mode On';
+        nightModeButton.classList = 'on';
     }
 
 }
