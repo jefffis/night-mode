@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Add night-mode to your website.</title>
-		<style>
-			* {
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Add Night Mode to your website.</title><style>* {
 				margin: 0;
 				padding: 0;
 				border: 0;
@@ -123,36 +115,4 @@
 			}
 			.on:after {
 				content: "On";
-			}
-		</style>
-	</head>
-	<body>
-
-		<div>
-			<span>
-				<h1>
-					You know what sucks? Reading on the web at night.
-				</h1>
-				<p>
-					Most websites have a light background with dark text, that at night, is kinda painful to read on. 
-				</p>
-				<noscript>
-					<p>
-						<a class="btn" href="https://github.com/jefffis/night-mode">Get it on Github</a>
-					</p>
-				</noscript>
-				<p id="night-mode-bookmarklet" class="hide">
-					<a class="btn" href='javascript:function makeTextReadable(){var a="* { -webkit-font-smoothing:subpixel-antialiased; -moz-osx-font-smoothing:auto; font-smooth: auto; }",b=document.head||document.getElementsByTagName("head")[0],c=document.createElement("style");c.type="text/css",c.styleSheet?c.styleSheet.cssText=a:c.appendChild(document.createTextNode(a)),b.appendChild(c)}makeTextReadable();' data-after="Drag to your bookmarks bar">Enable Night-mode</a>
-				</p>
-				<p id="mouse">
-					&copy; now; passionately made by <a href="http://hire.jefff.co/" target="_blank">jefff</a>.
-				</p>
-			</span>
-		</div>
-
-		<script>
-			document.getElementById('night-mode-bookmarklet').classList = '';
-		</script>
-		<script src="js/night-mode.js"></script>
-	</body>
-</html>
+			}</style></head><body><div><span><h1>You know what sucks? Reading on the web at night.</h1><p>Most websites have a light background with dark text, that at night, is kinda painful to read on. Enter the <strong>Night Mode</strong>: a l&rsquo;il JS library to help make reading at night less shitty for your users.</p><p id="night-mode-bookmarklet" class="hide"><a class="btn" href="https://github.com/jefffis/night-mode">Get the Night Mode</a></p><p id="mouse">&copy; now; passionately made by <a href="http://hire.jefff.co/" target="_blank">jefff</a>.</p></span></div><script src="js/app.js" async></script></body></html>
