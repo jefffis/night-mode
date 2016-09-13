@@ -161,9 +161,10 @@ var date = new Date(),
     nightModeButton = document.createElement('button'),
     nightModeEl = document.createElement('div'),
     nightModeStyle = document.createElement('style'),
-    head = document.getElementsByTagName('head')[0];
+    head = document.getElementsByTagName('head')[0],
+    nightModeApplicable = (currentHour > 20 || currentHour < 7) ? true : false;
 
-if ( currentHour > 20 ) {
+if ( nightModeApplicable ) {
     nightModeButton.innerHTML = 'Night Mode';
     nightModeButton.setAttribute('id', 'night-mode-toggle');
     nightModeButton.setAttribute('class', 'off');
@@ -182,6 +183,7 @@ function toggleNightMode() {
         nightModeOn = nightMode !== null ? true : false;
 
     if (nightModeOn) {
+        if (!nightModeApplicable) return;
         nightMode.parentNode.removeChild(nightMode);
         nightModeButton.classList = 'off';
         Cookies.remove('night-mode-on');
