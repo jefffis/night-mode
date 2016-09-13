@@ -163,7 +163,7 @@ var date = new Date(),
     nightModeStyle = document.createElement('style'),
     head = document.getElementsByTagName('head')[0];
 
-// if ( currentHour > 20 ) {
+if ( currentHour > 20 ) {
     nightModeButton.innerHTML = 'Night Mode';
     nightModeButton.setAttribute('id', 'night-mode-toggle');
     nightModeButton.setAttribute('class', 'off');
@@ -175,7 +175,7 @@ var date = new Date(),
     head.appendChild(nightModeStyle);
 
     body.appendChild(nightModeButton);
-// }
+}
 
 function toggleNightMode() {
     var nightMode = document.getElementById('night-mode-overlay'),
