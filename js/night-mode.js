@@ -164,6 +164,8 @@ var date = new Date(),
     head = document.getElementsByTagName('head')[0],
     nightModeApplicable = (currentHour > 20 || currentHour < 7) ? true : false;
 
+    nightModeApplicable = true;
+
 if ( nightModeApplicable ) {
     nightModeButton.innerHTML = 'Night Mode';
     nightModeButton.setAttribute('id', 'night-mode-toggle');
@@ -198,5 +200,3 @@ function toggleNightMode() {
 if(Cookies.get('night-mode-on')) {
     toggleNightMode();
 }
-
-document.getElementById('night-mode-bookmarklet').classList = '';

@@ -33,12 +33,6 @@
 				display: table-cell;
 				vertical-align: middle;
 			}
-			@media screen and (max-width:600px) {
-				div {
-					display: block;
-					padding: 2rem 1.5rem;
-				}
-			}
 			h1 {
 				margin-bottom: 1rem;
 				font-weight: 600;
@@ -48,16 +42,32 @@
 				max-width: calc(400px + 2rem);
 				margin: auto auto 1.5rem;
 			}
-			p:nth-of-type(1) {
-				margin-bottom: 2rem;
+			#night-mode-bookmarklet {
+				margin: 2rem auto;
 			}
 			#mouse {
-				margin-top: 4.5rem;
+				margin-top: 3.5rem;
 				font-size: 13px;
 			}
 			p {
 				margin-bottom: 1rem;
 				color: #666;
+			}
+			strong {
+				color: #333;
+			}
+			@media screen and (max-width:600px) {
+				html, body {
+					min-height: auto;
+					height: auto;
+				}
+				div {
+					display: block;
+					padding: 2rem 1.5rem;
+				}
+				#mouse {
+					margin-bottom: 3rem;
+				}
 			}
 			a {
 				color: #CF6000;
@@ -136,8 +146,11 @@
 				<p>
 					Most websites have a light background with dark text, that at night, is kinda painful to read on. Enter the <strong>Night Mode</strong>: a l&rsquo;il JS library to help make reading at night less shitty for your users.
 				</p>
-				<p id="night-mode-bookmarklet" class="hide">
+				<p id="night-mode-bookmarklet">
 					<a class="btn" href="https://github.com/jefffis/night-mode">Get the Night Mode</a>
+				</p>
+				<p>
+					<a href="img/video.gif">See how it works</a>
 				</p>
 				<p id="mouse">
 					&copy; now; passionately made by <a href="http://hire.jefff.co/?utm_source=night-mode" target="_blank">jefff</a>.

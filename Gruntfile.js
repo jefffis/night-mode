@@ -21,7 +21,8 @@ module.exports= function(grunt){
 				options: {                                 // Target options
 					removeComments: true,
 					collapseWhitespace: true,
-					minifyJS: true
+					minifyJS: true,
+					minifyCSS: true
 				},
 				files: {                                   // Dictionary of files
 					'index.html': 'index-original.html',     // 'destination': 'source'
