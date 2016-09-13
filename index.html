@@ -12,26 +12,87 @@
 				border: 0;
 				box-sizing: border-box;
 			}
+			html, body {
+				height: 100%;
+				min-height: 100%;
+			}
 			html {
-				font: normal 100%/1.5 sans-serif;
+				font: normal 100%/1.5 -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			}
 			body {
 				max-width: 600px;
-				margin: 2rem auto;
-				padding: 0 1.25rem;
+				margin: auto;
 			}
-			h1, h2 {
+			div {
+				display: table;
+				height: 100%;
+				width: 100%;
+				padding: 1rem;
+			}
+			span {
+				display: table-cell;
+				vertical-align: middle;
+			}
+			@media screen and (max-width:600px) {
+				div {
+					display: block;
+					padding: 2rem 1.5rem;
+				}
+			}
+			h1 {
 				margin-bottom: 1rem;
 				font-weight: 600;
-				line-height: 1.25;
+				line-height: 1.2;
 			}
-			h2 {
-				margin-top: 2rem;
-				font-weight: 400;
+			h1, p {
+				max-width: calc(400px + 2rem);
+				margin: auto auto 1.5rem;
+			}
+			p:nth-of-type(1) {
+				margin-bottom: 2rem;
+			}
+			#mouse {
+				margin-top: 4.5rem;
+				font-size: 13px;
 			}
 			p {
 				margin-bottom: 1rem;
 				color: #666;
+			}
+			a {
+				color: #CF6000;
+			}
+			.hide {
+				display: none;
+			}
+			.btn {
+				display: inline-block;
+				position: relative;
+				padding: .75rem 1.5rem;
+				border: 1px dashed currentColor;
+				border-radius: 4px;
+				text-decoration: none;
+			}
+			.btn:hover {
+				background: #FCE7D4;
+			}
+			a:active {
+				opacity: .65;
+			}
+			.btn:active {
+				opacity: 1;
+				background: #FCE7D4;
+			}
+			.btn:after {
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				margin-top: 10px;
+				content: attr(data-after);
+				color: #999;
+				font-size: 13px;
 			}
 			#night-mode-toggle {
 				position: fixed;
@@ -67,19 +128,31 @@
 	</head>
 	<body>
 
-		<h1>
-			Lorem ipsum dolor sit amet.
-		</h1>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="###">Ab voluptate quis</a> nostrum incidunt placeat aspernatur iure voluptatem ratione debitis quas, quod molestiae illum tenetur, perferendis porro maiores facilis aut. Iste?
-		</p>
-		<h2>
-			Lorem ipsum dolor sit amet.
-		</h2>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptate quis nostrum incidunt placeat aspernatur iure voluptatem ratione debitis quas, quod molestiae illum tenetur, perferendis porro maiores facilis aut. Iste? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab voluptate quis nostrum incidunt placeat aspernatur iure voluptatem ratione debitis quas, quod molestiae illum tenetur, perferendis porro maiores facilis aut. Iste? Lorem ipsum dolor sit amet.
-		</p>
+		<div>
+			<span>
+				<h1>
+					You know what sucks? Reading on the web at night.
+				</h1>
+				<p>
+					Most websites have a light background with dark text, that at night, is kinda painful to read on. 
+				</p>
+				<noscript>
+					<p>
+						<a class="btn" href="https://github.com/jefffis/night-mode">Get it on Github</a>
+					</p>
+				</noscript>
+				<p id="night-mode-bookmarklet" class="hide">
+					<a class="btn" href='javascript:function makeTextReadable(){var a="* { -webkit-font-smoothing:subpixel-antialiased; -moz-osx-font-smoothing:auto; font-smooth: auto; }",b=document.head||document.getElementsByTagName("head")[0],c=document.createElement("style");c.type="text/css",c.styleSheet?c.styleSheet.cssText=a:c.appendChild(document.createTextNode(a)),b.appendChild(c)}makeTextReadable();' data-after="Drag to your bookmarks bar">Enable Night-mode</a>
+				</p>
+				<p id="mouse">
+					&copy; now; passionately made by <a href="http://hire.jefff.co/" target="_blank">jefff</a>.
+				</p>
+			</span>
+		</div>
 
+		<script>
+			document.getElementById('night-mode-bookmarklet').classList = '';
+		</script>
 		<script src="js/night-mode.js"></script>
 	</body>
 </html>
