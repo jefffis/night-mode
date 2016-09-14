@@ -162,7 +162,7 @@ var date = new Date(),
     nightModeEl = document.createElement('div'),
     nightModeStyle = document.createElement('style'),
     head = document.getElementsByTagName('head')[0],
-    nightModeApplicable = (currentHour > 20 || currentHour < 7) ? true : false;
+    nightModeApplicable = (currentHour >= 20 || currentHour < 7) ? true : false;
 
 if ( nightModeApplicable ) {
     nightModeButton.innerHTML = 'Night Mode';
