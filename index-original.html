@@ -17,7 +17,8 @@
 				min-height: 100%;
 			}
 			html {
-				font: normal 100%/1.5 -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				border-top: 5px solid #1b2737;
+				font: normal 100%/1.5 sans-serif;
 			}
 			body {
 				max-width: 600px;
@@ -38,9 +39,12 @@
 				font-weight: 600;
 				line-height: 1.2;
 			}
-			h1, p {
-				max-width: calc(400px + 2rem);
+			h1, h2, p {
+				max-width: 450px;
 				margin: auto auto 1.5rem;
+			}
+			h2 {
+				margin-bottom: .5rem;
 			}
 			#night-mode-bookmarklet {
 				margin: 2rem auto;
@@ -53,6 +57,13 @@
 				margin-bottom: 1rem;
 				color: #666;
 			}
+			code {
+				display: inline-block;
+				background: #FCFCED;
+				padding: .1rem .35rem;
+				font-size: 16px;
+				vertical-align: middle;
+			}
 			strong {
 				color: #333;
 			}
@@ -61,10 +72,30 @@
 				padding: 0 .35rem;
 				font-style: normal;
 			}
+			a {
+				color: #CF6000;
+			}
+			img {
+				display: block;
+				position: absolute;
+				top: 2rem;
+				right: 2rem;
+				width: 75px;
+				border-radius: 100%;
+			}
 			@media screen and (max-width:600px) {
 				html, body {
 					min-height: auto;
 					height: auto;
+				}
+				h1 {
+					font-size: 27px;
+				}
+				h2 {
+					font-size: 21px;
+				}
+				p, code {
+					font-size: 15px;
 				}
 				div {
 					display: block;
@@ -73,9 +104,17 @@
 				#mouse {
 					margin-bottom: 3rem;
 				}
-			}
-			a {
-				color: #CF6000;
+				img {
+					position: static;
+					width: 50px;
+					margin: auto auto 2rem;
+				}
+				em {
+					width: .25rem;
+					overflow: hidden;
+					padding: 0;
+					color: white;
+				}
 			}
 			.hide {
 				display: none;
@@ -93,10 +132,6 @@
 			}
 			a:active {
 				opacity: .65;
-			}
-			.btn:active {
-				opacity: 1;
-				background: #FCE7D4;
 			}
 			.btn:after {
 				display: block;
@@ -140,16 +175,24 @@
 				content: "On";
 			}
 		</style>
+		<link rel="shortcut icon" href="img/logo.jpg" type="image/x-icon" />
 	</head>
 	<body>
 
 		<div>
 			<span>
+				<img src="img/logo.jpg" alt="the Night Mode" />
 				<h1>
 					You know what sucks? Reading on the web at night.
 				</h1>
 				<p>
-					Most websites have a light background with dark text, that at night, is kinda painful to read on. Enter the <strong>Night Mode</strong>: a l&rsquo;il JS library to help make reading at night less shitty for your users.
+					Most websites have a light background with dark text, that at night, is kinda painful to read on. Enter the <strong>Night Mode</strong>: a l&rsquo;il JS library to help make reading at night on the web suck less.
+				</p>
+				<h2>
+					How does it work?
+				</h2>
+				<p>
+					Night Node works by overlaying a <code>div</code> on top of all a sites content, applying a transparent semi-background, and then specifying <code>pointer-events: none;</code> to this <code>div</code>. By doing this, the div is basically outside of the interaction layer, but still sits atop the content to tone down the contrast that hurts our eyes at night. Read <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events" target="_blank">about</a> <a href="http://caniuse.com/#search=pointer-events" target="_blank">pointer-events</a>.
 				</p>
 				<p id="night-mode-bookmarklet">
 					<a class="btn" href="https://github.com/jefffis/night-mode">Get Night Mode</a>
